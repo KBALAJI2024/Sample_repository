@@ -1,0 +1,59 @@
+
+<!-- <app-child [receiveddata]="Names"></app-child> -->
+
+<div class="todo-container">
+  <h1>To-Do List</h1>
+
+  <!-- Input for New Task -->
+  <div class="add-task">
+    <input
+      type="text"
+      [(ngModel)]="newTask"
+      placeholder="Enter a new task"
+      class="form-control"
+    />
+    <button (click)="addTask()" class="btn btn-primary">Add</button>
+  </div>
+
+  <!-- List of To-Do Items -->
+  <ul>
+    <li *ngFor="let todo of todos">
+      <!-- Display or Edit Mode -->
+      <div *ngIf="!todo.isEditing">
+        {{ todo.task }}
+        <button (click)="startEditing(todo)" class="btn btn-warning">Edit</button>
+        <button (click)="deleteTask(todo.id)" class="btn btn-danger">Delete</button>
+        <button class="btn btn-success">{{time | date : 'dd-MM-yyyy'}}</button><button class="btn btn-success">{{todo.time | date :'HH:mm a'}}</button> 
+      </div>
+
+      <!-- Edit Mode -->
+      <div *ngIf="todo.isEditing">
+        <input [(ngModel)]="editTask" class="form-control" />
+        <button (click)="saveTask(todo)" class="btn btn-success">Save</button>
+        <button (click)="cancelEditing(todo)" class="btn btn-secondary">Cancel</button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+<app-child [receivedMessage]="parentMessage"></app-child>
+
+<table border="1" class="table" datatable   >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of tableData">
+      <td>{{ row.id }}</td>
+      <td>{{ row.name }}</td>
+      <td>{{ row.age }}</td>
+      <td>{{ row.department }}</td>
+    </tr>
+  </tbody>
+</table>
