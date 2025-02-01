@@ -1,0 +1,62 @@
+.title{
+    align-content: center;
+    color: chartreuse;
+    text-align: center;
+    
+}
+
+.input{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.inputvalue{
+    margin: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+     align-items: center;
+}
+
+
+.textvalue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Align items vertically */
+    height: 100vh; /* Optional: Full-screen height */
+}
+
+.textinputvalue {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align list items horizontally */
+    width: 30%; /* Ensure it spans the full width if needed */
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between; /* Ensures the box and button are apart */
+    align-items: center;
+    width: 100%; /* Make it span full width */
+    margin-bottom: 10px; /* Adds spacing between task items */
+}
+
+.task-box {
+    border: 1px solid #ccc; /* Adds a border around the box */
+    padding: 15px; /* Adds spacing inside the box */
+    border-radius: 5px; /* Optional: Makes the box corners rounded */
+    background-color: #fdfbfb; /* Optional: Adds a light background */
+    flex-grow: 1; /* Allows the box to take up available space */
+    margin-right: 10px; /* Adds space between the box and the button */
+}
+
+.btn {
+    white-space: nowrap; /* Prevents the button text from wrapping */
+}
